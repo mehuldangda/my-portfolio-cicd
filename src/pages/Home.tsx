@@ -65,20 +65,20 @@ const PROJECTS = [
     title: "DiagnoWise",
     role: "ML · Disease Prediction & Decision Support",
     year: "2025",
-    desc: "ML-based disease prediction and clinical decision-support system trained on 5,000+ Kaggle records with ~92% accuracy using Decision Tree, Random Forest, and Gradient Boosting. Evaluates 130+ symptoms across 41 disease categories, with top-3 differential diagnosis predictions and precautions deployed via Streamlit.",
-    tech: ["Python", "Pandas", "Scikit-learn", "Streamlit"],
-    live: "https://github.com/mehuldangda",
-    repo: "https://github.com/mehuldangda",
+    desc: "ML-based disease prediction and clinical decision-support system evaluating 130+ symptoms across 41 disease categories using Random Forest, Decision Tree, and Gradient Boosting (~92% accuracy). Features a top-3 differential diagnosis workflow, specialist recommendations, and precautions deployed via Streamlit.",
+    tech: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+    live: "https://diagnowise-ml.streamlit.app/",
+    repo: "https://github.com/mehuldangda/DiagnoWise-symptom-based-disease-prediction-system",
   },
   {
     no: "02",
     title: "ResumeIQ",
     role: "NLP · Resume Screening & Candidate Matching",
     year: "2026",
-    desc: "NLP-powered resume screening system built on 2,400+ resumes across 8+ professional categories. Employs TF-IDF vectorization and cosine similarity for candidate-job matching, and a Logistic Regression classifier achieving ~89% accuracy with automated skill-gap analysis and job recommendations.",
+    desc: "NLP-powered resume screening and job-matching system trained on 2,400+ resumes across 8+ professional categories. Employs TF-IDF vectorization and cosine similarity for candidate ranking, a Logistic Regression classifier achieving ~89% accuracy, automated skill-gap analysis, and Streamlit dashboard.",
     tech: ["Python", "NLP", "TF-IDF", "Scikit-learn", "Streamlit"],
-    live: "https://github.com/mehuldangda",
-    repo: "https://github.com/mehuldangda",
+    live: "https://resumeiq-nlp.streamlit.app/",
+    repo: "https://github.com/mehuldangda/ResumeIQ-nlp-based-resume-screening-job-matching-system",
   },
 ];
 
@@ -145,7 +145,7 @@ const EXPERIENCE = [
     role: "Data Science Intern",
     org: "AvikaSoft",
     when: "May 2026 – Jul 2026",
-    note: "Engineered a Customer Churn Prediction model on 10,000+ records using Python, Pandas, NumPy, and Scikit-learn. Executed data preprocessing and feature engineering, and trained 4+ classification models (Random Forest, Decision Tree, Logistic Regression, Naive Bayes) with GridSearchCV hyperparameter optimization.",
+    note: "Developed a Customer Churn Prediction model using Python, Pandas, NumPy, and Scikit-learn on 10,000+ customer records. Performed data preprocessing and feature engineering, handling missing values, outliers, and categorical features. Trained and compared 4+ classification models (Random Forest, Decision Tree, Logistic Regression, Naive Bayes) with GridSearchCV hyperparameter tuning.",
   },
 ];
 
@@ -444,19 +444,19 @@ export default function Index() {
                     href={p.live}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`Preview ${p.title}`}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background transition hover:opacity-90"
+                    aria-label={`Live Demo for ${p.title} (Streamlit)`}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-xs font-medium text-background transition hover:opacity-90"
                   >
-                    Preview <ExternalLink size={12} />
+                    Live Demo <ExternalLink size={12} />
                   </a>
                   <a
                     href={p.repo}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`View ${p.title} source code`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-3 py-1.5 text-xs font-medium hover:border-accent hover:text-accent transition"
+                    aria-label={`GitHub repository for ${p.title}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 px-3.5 py-1.5 text-xs font-medium hover:border-accent hover:text-accent transition"
                   >
-                    Code <Github size={12} />
+                    GitHub <Github size={12} />
                   </a>
                 </div>
               </article>
@@ -541,7 +541,7 @@ export default function Index() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                     2023 — 2027
                   </div>
-                  <Briefcase size={14} className="text-accent" />
+                  <GraduationCap size={14} className="text-accent" />
                 </div>
                 <h3 className="mt-2 font-display text-xl font-semibold">
                   Swami Keshvanand Institute of Technology (SKIT), Jaipur
@@ -777,8 +777,10 @@ export default function Index() {
             </a>
             <a
               href={LINKS.resume}
+              download="Mehul_Dangda_Resume.pdf"
               target="_blank"
               rel="noreferrer"
+              aria-label="Download Mehul Dangda Resume (PDF)"
               className="hover:text-accent underline-offset-4 hover:underline"
             >
               Resume
